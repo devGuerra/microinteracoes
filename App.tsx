@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
+
+import { Touches } from './src/components/Touches';
+import { LongPress } from './src/components/LongPress';
+import { Rotation } from './src/components/Rotation';
+import { Pinch } from './src/components/Pinch';
+import { Pan } from './src/components/Pan';
+import { Fling } from './src/components/Fling';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <GestureHandlerRootView
+      style={{ flex: 1 }}
+    >
+      <Touches />
+      <LongPress />
+      <Rotation />
+      <Pinch />
+      <Pan />
+      <Fling />
+    </GestureHandlerRootView >
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
